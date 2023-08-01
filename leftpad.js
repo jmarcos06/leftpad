@@ -1,15 +1,49 @@
 // leftpad.js
-export function leftpad(str, length, paddingChar = ' ') {
-  if (typeof str !== 'string') {
-    throw new Error('The input must be a string');
-  }
+var cache = [
+  '',
+  ' ',
+  '  ',
+  '   ',
+  '    ',
+  '     ',
+  '      ',
+  '       ',
+  '        ',
+  '         '
+];
 
-  if (str.length >= length) {
+function leftpad(str, length, paddingChar = ' ') {
+
+  length = length - str.length;
+
+  if (length <= 0 ) {
     return str;
   }
 
-  const paddingLength = length - str.length;
-  const padding = paddingChar.repeat(paddingLength);
+  if(!paddingChar && paddingChar !== 0) {
+    paddingChar = ' ';
+  }
 
-  return padding + str;
+  paddingChar = paddingChar + '';
+
+  if(paddingChar === ' ' && length < 10) {
+    return cache[length] + str;
+  }
+
+  var pad = '';
+
+  while(true){
+    if(length & 1){
+      pad += paddingChar;
+    }
+    length >>= 1;
+    
+    if(length){
+      paddingChar += paddingChar;
+    }
+  }
+
+  return pad + str;
 }
+
+export {leftpad};
