@@ -13,6 +13,7 @@ var cache = [
 ];
 
 const leftpad = (str, length, paddingChar = " ") => {
+  length = Math.max(0, length - str.length);
   if (length <= 0) {
     return str;
   }
