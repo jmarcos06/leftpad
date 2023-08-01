@@ -1,4 +1,5 @@
-function leftpad(str, length, paddingChar = ' ') {
+// leftpad.js
+export function leftpad(str, length, paddingChar = ' ') {
   if (typeof str !== 'string') {
     throw new Error('The input must be a string');
   }
@@ -12,5 +13,3 @@ function leftpad(str, length, paddingChar = ' ') {
 
   return padding + str;
 }
-
-export { leftpad };
