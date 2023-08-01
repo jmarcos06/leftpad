@@ -12,3 +12,5 @@ function leftpad(str, length, paddingChar = ' ') {
 
   return padding + str;
 }
+
+export { leftpad };
