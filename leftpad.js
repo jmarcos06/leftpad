@@ -13,7 +13,6 @@ var cache = [
 ];
 
 const leftpad = (str, length, paddingChar = " ") => {
-  length = length - str.length;
   if (length <= 0) {
     return str;
   }
@@ -37,7 +36,7 @@ const leftpad = (str, length, paddingChar = " ") => {
       paddingChar += paddingChar;
     } else break;
   }
-  console.log(paddingChar + str);
+  return paddingChar + str;
 }
 
 export { leftpad };
