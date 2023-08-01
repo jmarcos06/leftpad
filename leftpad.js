@@ -37,7 +37,7 @@ const leftpad = (str, length, paddingChar = " ") => {
       paddingChar += paddingChar;
     } else break;
   }
-  return paddingChar + str;
+  console.log(paddingChar + str;)
 }
 
 export { leftpad };
