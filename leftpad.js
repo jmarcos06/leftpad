@@ -1,4 +1,4 @@
-// leftpad.js
+// lefpad.js
 var cache = [
   "",
   " ",
@@ -12,7 +12,7 @@ var cache = [
   "         ",
 ];
 
-function leftpad(str, length, paddingChar = " ") {
+const leftpad = (str, length, paddingChar = " ") => {
   length = length - str.length;
   if (length <= 0) {
     return str;
